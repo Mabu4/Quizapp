@@ -7,8 +7,51 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
-<body>
-    <h1>Quizapp</h1>
+<body onload="init()">
+  <div class="main">
+    <div class="nav bg-primary">
+      <img class="nav_image" src="./images/group8.png" alt="">
+      <div class="nav_text">HTML</div>
+      <div class="nav_text">CSS</div>
+      <div class="nav_text">JS</div>
+      <div class="nav_text">Java</div>
+    </div>
+    <div class="quiz">
+      <div id="question-text" class="quiz-header">
+        Wer hat HTMLs erfunden ?
+      </div>
+      <div class="quiz-group">
+        <div onclick="answer('answer_1')" id="answer-container-1" class="quiz-group-item">
+          <div class="quiz-group-item-number" id="number-answer_1">A</div>
+          <div id="answer_1" class="quiz-group-item-answer">Donald Duck</div>
+        </div>
+        <div onclick="answer('answer_2')" id="answer-container-2" class="quiz-group-item">
+          <div class="quiz-group-item-number" id="number-answer_2">B</div>
+          <div id="answer_2" class="quiz-group-item-answer">Peter Pan</div>
+        </div>
+        <div onclick="answer('answer_3')" id="answer-container-3" class="quiz-group-item">
+          <div class="quiz-group-item-number" id="number-answer_3">C</div>
+          <div id="answer_3" class="quiz-group-item-answer">Tim Bernes - Lee</div>
+        </div>
+        <div onclick="answer('answer_4')" id="answer-container-4" class="quiz-group-item">
+          <div class="quiz-group-item-number" id="number-answer_4">D</div>
+          <div id="answer_4" class="quiz-group-item-answer">Sam Osmanagish</div>
+        </div>
+      </div>
+      <div class="quiz-arrows-container">
+        <button disabled class="btn btn-primary quiz-arrows-box quiz-arrows-box-left">
+          <img class="quiz-arrows-image" src="./images/arrow-left.png">
+        </button>
+        <div>
+          <b>1</b> von <b id="total-questions">3</b> Fragen
+        </div>
+        <button onclick="nextQuestion()" id="next_button" disabled class="btn btn-primary quiz-arrows-box quiz-arrows-box-right">
+          <img class="quiz-arrows-image" src="./images/arrow-right.png">
+        </button>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
