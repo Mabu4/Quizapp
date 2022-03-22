@@ -9,18 +9,35 @@
     <script src="script.js"></script>
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
-<body onload="init()">
+<body onload="init('HTML')">
   <div class="main">
     <div class="nav bg-primary">
       <img class="nav_image" src="./images/group8.png" alt="">
-      <div class="nav_text">HTML</div>
-      <div class="nav_text">CSS</div>
-      <div class="nav_text">JS</div>
-      <div class="nav_text">Java</div>
+      <div onclick="init('HTML')" class="nav_text">HTML</div>
+      <div onclick="init('CSS')" class="nav_text">CSS</div>
+      <div onclick="init('JS')" class="nav_text">JS</div>
+      <div onclick="init('JAVA')" class="nav_text">Java</div>
     </div>
-    <div class="quiz">
-      <div id="question-text" class="quiz-header">
-        Wer hat HTMLs erfunden ?
+    <div id="result-container" class="result-container d-none1">
+      <div class="progress">
+          <div id="progress-bar-finish" class="progress-bar" role="progressbar"></div>
+      </div>
+      <div class="result-container-inner">
+          <img class="result-image" src="./images/group5.png">
+          <h3 class="result-header">Complete <br>HTML Quiz</h3>
+          <div class="result-score"><span class="result-score-text">Your Score</span><span id="amount-of-right-questions">10</span> / <span id="amount-of-questions"></span></div>
+          <button class="result-share-button orange-button">Share</button>
+          <button onclick="restartGame()" class="result-replay-button orange-button">Replay</button>
+      </div>
+    </div>
+    <div class="quiz" id="quiz">
+      <div>
+        <div class="progress">
+          <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 0%;">0%</div>
+        </div>
+        <div id="question-text" class="quiz-header">
+          Wer hat HTMLs erfunden ?
+        </div>
       </div>
       <div class="quiz-group">
         <div onclick="answer('answer_1')" id="answer-container-1" class="quiz-group-item">
@@ -45,7 +62,7 @@
           <img class="quiz-arrows-image" src="./images/arrow-left.png">
         </button>
         <div>
-          <b>1</b> von <b id="total-questions">3</b> Fragen
+          <b id="actual-question">1</b> von <b id="total-questions">3</b> Fragen
         </div>
         <button onclick="nextQuestion()" id="next_button" disabled class="btn btn-primary quiz-arrows-box quiz-arrows-box-right">
           <img class="quiz-arrows-image" src="./images/arrow-right.png">
