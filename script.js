@@ -90,10 +90,10 @@ let questionsJS = [
     },
     {
         'question': 'Wie binde ich eine Javascript Datei in ein HTML Dokument ?',
-        'answer_1': '<script>',
-        'answer_2': '<js>',
-        'answer_3': '<javascript>',
-        'answer_4': '<link>',
+        'answer_1': 'script',
+        'answer_2': 'js',
+        'answer_3': 'javascript',
+        'answer_4': 'link',
         'right_answer': 1
     },
     {
